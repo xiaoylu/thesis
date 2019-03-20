@@ -475,11 +475,10 @@
          for the Degree of\\ [10pt]
          \emph{\uppercase\expandafter{\@degree}} \\ [40pt]
          Approved by:\\
-         Dr. Mark S. Shephard, Chair\\
-         Dr. Assad A. Oberai, Co-Chair\\
-         Dr. Antoinette M. Maniatty\\
-         Dr. Jason E. Hicken\\
-         Dr. Jeffrey W. Banks\\
+         Dr. Boleslaw K. Szymanski, Chair\\
+         Dr. Gyorgy Korniss\\
+         Dr. Jianxi Gao\\
+         Dr. Malik Magdon-Ismail\\
          \vskip 100pt
          \includegraphics[width=0.25\linewidth]{img/rpi_seal}
          \vskip 20pt

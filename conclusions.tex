@@ -1,75 +1,13 @@
 %%% CONCLUSIONS AND FUTURE WORK
-\chapter{CONCLUSIONS AND FUTURE WORK}
+\chapter{CONCLUSIONS}
 \label{chap:conclusions}
 
 %%% CONCLUSIONS
 \section{Conclusions}
+This thesis centers around the theory and practice of community structures detection at scale and its applications to understanding the dynamics of social networks. 
 
-We have presented an automated approach for adjoint-based error estimation and mesh
-adaptation to approximate and control the discretization error associated with
-functional quantities. In scenarios when these functional quantities correspond
-to physically meaningful outputs, such as the average von-Mises stress over a
-sub-domain, we have demonstrated that this approach can provide effective error
-estimates and meaningfully adapt the mesh to reduce the functional
-discretization error. In particular, we have developed and implemented this approach
-to be applicable to stabilized finite element methods and have demonstrated its
-ability to effectively estimate and control errors in a variety of applications
-in solid mechanics. Importantly, we have demonstrated that this approach is applicable
-to applications with complex three-dimensional geometries.
-Further, we have demonstrated the ability of this approach
-to execute effectively on parallel machines. We have extended the
-automated approach to investigate two novel strategies for solving adjoint problems
-on non-uniformly refined nested meshes. Finally, we have developed and
-investigated a novel approach for adjoint-based error estimation and mesh adaptation
-in the context of variational multiscale finite element methods. For the purposes
-of mesh adaptation, we have demonstrated the superiority of this approach when compared
-to a previously developed error estimate.
+In this thesis, we propose several key enhancement to the modularity-based community detection algorithms. Despite being one of the most widely used state-of-the-art community detection approaches, modularity maximization suffers from the resolution limit problem which arises due to the implicit dependence of the modularity definition on a constant (explicitly defined in the generalized modularity as a resolution parameter). In this thesis, we establish the asymptotic theoretical upper and lower bounds on the resolution parameter of generalized modularity, which is the first result connecting the resolution limit of modularity with the random graph models. We also propose a progressive agglomerative heuristic algorithm that systematically increases the resolution parameter to partition a graph recursively. The statistical hypothesis testing checks if the partition found by each branch of the recursion is significant. If it is, this branch continues splitting the current graph; otherwise, the recursion branch terminates, accepting the null hypothesis that the current subgraph is already a community. In this thesis, we also show that the appropriately assigned edge weights can improve the quality of the detected communities. We propose an edge weighting scheme which improve the state-of-the-art approaches significantly and a generative random graph model which puts a constraint on nodes' internal degree ratio to stabilize the inference of block model, by preventing the inference algorithms, like Markov chain Monte Carlo, from getting trapped in the local optima of the log-likelihood.
 
-%%% FUTURE WORK
-\section{Future Work}
+In the context of information propagation, the community structures play an essential role in facilitating the local spread of information because the community members are more likely to accept inputs from each other than from the outsiders. Based on the statistical survival analysis, our community-affiliated information cascade model outperforms the feature-based approaches by almost 20\% on the Global Database of Events, Language, and Tone (GDELT) dataset as measured by the F1-scores of the predictions. We parallelize the corresponding graph representation learning algorithm for both shared memory and distributed memory machines. The parallelized stochastic gradient descent algorithm is shown to scale well to 10K+ cores in the IBM Blue Gene/Q supercomputer at RPI (ranked among the fastest academic-owned IBM Blue Gene supercomputers).
 
-\subsection{Higher Order Finite Element Methods}
-
-In this work, we have preferred to utilize low-order stabilized
-finite element methods to provide numerical stability in solid
-mechanics applications with incompressibility constraints.
-Taylor-Hood type elements provide another approach to develop
-stable discretizations in the finite element method, where
-displacements are represented with basis functions of order
-$p+1$ and pressures are represented with basis functions of
-order $p$. This leads to a more involved finite element assembly
-process. The techniques used in the Goal application
-could be extended to accommodate such elements to allow for the
-investigation of adjoint-based  error estimation and mesh adaptation
-for higher-order finite element methods.
-
-\subsection{Extending Capabilities to Quasi-Steady/Transient Problems}
-
-The examples presented in this work have been either steady-state examples
-or quasi-steady examples loaded in a single load step.
-The Goal application currently has the ability to perform multiple load
-steps and solve the adjoint problem either at the end of each load step
-or at the end of the total number of load steps to estimate errors in functional
-quantities of interest. This approach is mathematically valid for constitutive
-models that lack history-dependent variables, such as neo-Hookean elasticity.
-However, for constitutive models with history dependence, an error is
-introduced by the choice of step size, even if the problem is not truly
-transient. A natural extension of the current work is to consider multiple
-quasi-steady load steps for constitutive models with history-dependent variables
-and truly transient problems with inertial terms included in the balance
-of linear momentum residual. In these scenarios, the mathematical analysis
-requires the adjoint problem to be solved \emph{backwards in time}.
-In parallel, the effective implementation of such a backwards in time adjoint
-problem is an ongoing research topic in the CFD community.
-
-\subsection{Extending VMS Techniques for Solid Mechanics}
-
-We have developed and investigated enriching the adjoint solution with
-variational multiscale (VMS) techniques and estimating errors in
-linear functional QoIs in the context of a linear advection-diffusion model problem.
-These techniques should be analysed in the context of nonlinear variational
-problems and QoIs. In the Goal application, we have additionally included
-the ability to solve the adjoint problem on the same finite element space
-as used for the primal problem. This provides a convenient pretext to
-implement VMS adjoint enrichment routines in the Goal application, and
-investigate error estimates obtained as such.
+Finally, we study the patterns of the polarization evolution by analyzing millions of roll-call votes in the legislative branches of the United States. We proposed an agent-based social dynamical model explaining the formation of polarization observed in real legislative voting data and identifying the tipping points of this dynamical system. The stable state getting close to either full polarization or full consensus provides early warning signals that the system is close to the bifurcation. Our dynamical model successfully explains the directions of polarization change in 28 out of the past 30 U.S. Congresses. The hidden variable in the dynamical model, called the polarization utility, is shown to correlate with critical historical events such as the civil rights movement and Super PACs.

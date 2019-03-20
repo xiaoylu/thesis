@@ -33,6 +33,9 @@ bottom=1in}
 \usepackage{mathrsfs}
 \usepackage{upgreek}
 
+\DeclareMathOperator*{\argmax}{arg\,max}  %%
+\newcommand{\pluseq}{\mathrel{+}=} %%
+
 % figures
 \usepackage{graphicx}
 
@@ -46,6 +49,8 @@ bottom=1in}
 
 % make pretty tables
 \usepackage{tabu}
+\usepackage{multirow} %
+\usepackage{hhline} %
 
 % algorithms
 \usepackage{algpseudocode}
@@ -78,11 +83,13 @@ bottom=1in}
 
 % theorems and propositions
 \newtheorem{prop}{Proposition}
+\newtheorem{thm}{Theorem}
 \theoremstyle{remark}
 \newtheorem{rmk}{Remark}
 
 % make typing easier
 \newcommand{\B}{\mathcal{B}}
+\newcommand{\N}{\mathcal{N}}
 \newcommand{\E}{\mathcal{E}}
 \newcommand{\G}{\mathcal{G}}
 \newcommand{\I}{\mathcal{I}}
@@ -108,14 +115,17 @@ bottom=1in}
 
 \begin{document}
 \include{title}
-\include{acknowledge}
+%\include{acknowledge}
 \include{abstract}
-\include{introduction}
-\include{automated}
-\include{mech}
-\include{refine}
-\include{vms}
+\include{chap1_introduction}
+\include{chap2_community_detection}
+\include{chap3_information_cascade}
+\include{chap4_polarization}
+
+%\include{mech}
+%\include{refine}
+%\include{vms}
 \include{conclusions}
 \include{bibliography}
-\include{appendix}
+%\include{appendix}
 \end{document}
